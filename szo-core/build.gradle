@@ -1,0 +1,153 @@
+description = 'SZO :: Core'
+
+dependencies {
+    compile(
+            lib.mail,
+            lib.activation,
+            lib.javaee,
+            lib.log,
+            lib.simleLog,
+            lib.slf4jApi,
+            lib.jclOverSlf4j,
+            lib.julToSlf4j,
+            lib.log4jOverSlf4j,
+            lib.codegenerate,
+            lib.minidao,
+            lib.onlineCoding,
+            lib.onlineCodingJsp,
+            lib.druid,
+            lib.fastjson,
+            lib.joddCore,
+            lib.jodconverter,
+            lib.pinyin4j,
+            lib.aspectjweaver,
+            lib.javassist,
+            lib.springExpression,
+            lib.springBeans,
+            lib.springAop,
+            lib.springContext,
+            lib.springContextSupport,
+            lib.springTx,
+            lib.springJdbc,
+            lib.springOrm,
+            lib.springOxm,
+            lib.springWeb,
+            lib.springWebmvc,
+            lib.commonsLang,
+            lib.commonsCodec,
+            lib.commonsCollections,
+            lib.freemarker,
+            lib.cglib,
+            lib.springSecurityWeb,
+            lib.springSecurityConfig,
+            lib.springSecurityAcl,
+            lib.springSecurityTaglibs,
+            lib.luceneHighlighter,
+            lib.p6spy,
+            lib.quartz,
+            lib.activitiEngine,
+            lib.springTest,
+            lib.junit,
+            lib.mockito,
+            lib.mysql,
+            lib.cxfRtTransportsHttp
+    )
+    // 排除冲突包
+    compile(lib.logbackClassic) {
+        exclude(module: 'commons-logging')
+    }
+    compile(lib.hibernateEntitymanager) {
+        exclude(module: 'commons-logging')
+        exclude(module: 'xml-apis')
+    }
+    compile(lib.jaxen) {
+        exclude(module: 'xercesImpl')
+        exclude(module: 'xml-apis')
+        exclude(module: 'xom')
+    }
+    compile(lib.hibernateEhcache) {
+        exclude(module: 'hibernate-core')
+        exclude(module: 'commons-logging')
+    }
+    compile(lib.hibernateMemcached) {
+        exclude(module: 'hibernate')
+    }
+    compile(lib.springCore) {
+        exclude(module: 'commons-logging')
+    }
+    compile(lib.struts2Core) {
+        exclude(module: 'commons-logging')
+    }
+    compile(lib.jasypt) {
+        exclude(module: 'commons-lang')
+        exclude(module: 'commons-codec')
+    }
+    compile(lib.commonsDbcp) {
+        exclude(module: 'xercesImpl')
+        exclude(module: 'xml-apis')
+    }
+    compile(lib.jsonLib) {
+        exclude(module: 'commons-logging')
+    }
+    compile(lib.springSecurityCore) {
+        exclude(module: 'spring-aop')
+        exclude(module: 'spring-core')
+        exclude(module: 'spring-context')
+        exclude(module: 'spring-support')
+        exclude(module: 'commons-logging')
+    }
+    compile(lib.compass) {
+        exclude(module: 'commons-logging')
+    }
+    compile(lib.poi) {
+        exclude(module: 'commons-logging')
+        exclude(module: 'log4j')
+    }
+    compile(lib.jcaptchaAll) {
+        exclude(module: 'quartz')
+        exclude(module: 'xmlParserAPIs')
+        exclude(module: 'xercesImpl')
+        exclude(module: 'ehcache')
+        exclude(module: 'commons-logging')
+        exclude(module: 'hsqldb')
+        exclude(module: 'spring')
+    }
+    compile(lib.sigar) {
+        exclude(module: 'log4j')
+    }
+    compile(lib.cxfRtCore) {
+        exclude(module: 'commons-logging')
+        exclude(module: 'geronimo-javamail_1.4_spec')
+        exclude(module: 'geronimo-activation_1.1_spec')
+    }
+    compile(lib.cxfRtFrontendJaxws) {
+        exclude(module: 'geronimo-javamail_1.4_spec')
+        exclude(module: 'geronimo-activation_1.1_spec')
+    }
+    compile(lib.cxfRtWsSecurity) {
+        exclude(module: 'commons-logging')
+    }
+    compile(lib.birt) {
+        exclude(module: 'commons-logging')
+        exclude(module: 'org.apache.commons.logging')
+    }
+    compile(lib.activitiSpring) {
+        exclude(module: 'slf4j-log4j12')
+    }
+    compile(lib.activitiExplorer) {
+        exclude(module: 'vaadin')
+        exclude(module: 'dcharts-widget')
+        exclude(module: 'activiti-simple-workflow')
+        exclude(module: 'slf4j-log4j12')
+    }
+    compile(lib.activitiModeler) {
+        exclude(module: 'commons-logging')
+    }
+    compile(lib.wro4jCore) {
+        exclude(module: 'slf4j-api')
+        exclude(module: 'commons-lang3')
+    }
+
+    testCompile lib.junit
+
+}

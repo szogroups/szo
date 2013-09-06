@@ -1,0 +1,133 @@
+ext {
+    gradleScriptDir = "${rootProject.projectDir}/gradle"
+    // common manifest data
+    commonManifest = [
+            'Debug-Info' : 'on',
+            'Built-By' : 'szo.com',
+            'Bundle-License' : 'http://szo.com/license.html',
+            'Bundle-Vendor' : 'Szo',
+            'Bundle-DocURL' : 'http://szo.com',
+            'Implementation-Version': version,
+            'Implementation-Vendor': 'Szo Team'
+    ]
+    springVersion = '3.2.3.RELEASE'
+    springSecurityVersion = '3.1.4.RELEASE'
+    activitiVersion = '5.13'
+    cxfVersion = '2.7.3'
+
+// 相关依赖包
+    lib = [
+            // java mail发邮件
+            mail: 'javax.mail:mail:1.4.5',
+            activation: 'javax.activation:activation:1.1.1',
+            //j2ee版本
+            javaee: 'javax:javaee-api:6.0',
+            // servlet容器相关
+            servlet: 'javax.servlet:javax.servlet-api:3.0.1',
+            jsp: 'javax.servlet.jsp:jsp-api:2.0',
+            // 日志相关
+            log: 'org.slf4j:slf4j-api:1.7.2',
+            simpleLog: 'org.slf4j:slf4j-simple:1.7.2',
+            slf4jApi: 'org.slf4j:slf4j-api:1.6.4',
+            jclOverSlf4j: 'org.slf4j:jcl-over-slf4j:1.6.4',
+            julToSlf4j: 'org.slf4j:jul-to-slf4j:1.6.4',
+            log4jOverSlf4j: 'org.slf4j:log4j-over-slf4j:1.6.4',
+//		asm:			'org.ow2.asm:asm:4.1',
+            // jeecg开源项目
+            codegenerate: 'org.jeecgframework:codegenerate:3.3.2',
+            minidao: 'org.jeecgframework:minidao:1.2.1',
+            onlineCoding: 'org.jeecgframework:online_coding:3.3.2',
+            onlineCodingJsp: 'org.jeecgframework:online_coding_jsp:3.3.2',
+
+            // 阿里巴巴数据库连接
+            druid: 'com.alibaba:druid:0.2.5',
+            fastjson: 'com.alibaba:fastjson:1.1.33',
+
+            // jodd开源项目-java瑞士军刀，不错的工具
+            joddCore: 'org.jodd:jodd-core:3.4.1',
+            jodconverter: 'com.artofsolving:jodconverter-core:3.0-beta-3-patched',
+            // 拼音java版本
+            pinyin4j: 'com.belerweb:pinyin4j:2.5.0',
+
+            // AOP
+            aspectjweaver: 'org.aspectj:aspectjweaver:1.6.9',
+            aspectjrt: 'org.aspectj:aspectjrt:1.6.9',
+
+            logbackClassic: 'ch.qos.logback:logback-classic:0.9.28',
+
+            hibernateEntitymanager: 'org.hibernate:hibernate-entitymanager:${hibernateVersion}',
+            // 开源的XPath库
+            jaxen: 'jaxen:jaxen:1.1.1',
+            // 开源的分析、编辑和创建Java字节码的类库
+            javassist: 'javassist:javassist:3.8.0.GA',
+            hibernateEhcache: 'org.hibernate:hibernate-ehcache:${hibernateVersion}',
+            hibernateMemcached: 'com.googlecode:hibernate-memcached:1.3',
+            springCore: 'org.springframework:spring-core:${springVersion}',
+            springExpression: 'org.springframework:spring-expression:${springVersion}',
+            springBeans: 'org.springframework:spring-beans:${springVersion}',
+            springAop: 'org.springframework:spring-aop:${springVersion}',
+            springContext: 'org.springframework:spring-context:${springVersion}',
+            springContextSupport: 'org.springframework:spring-context-support:${springVersion}',
+            springTx: 'org.springframework:spring-tx:${springVersion}',
+            springJdbc: 'org.springframework:spring-jdbc:${springVersion}',
+            springOrm: 'org.springframework:spring-orm:${springVersion}',
+            springOxm: 'org.springframework:spring-oxm:${springVersion}',
+            springWeb: 'org.springframework:spring-web:${springVersion}',
+            springWebmvc: 'org.springframework:spring-webmvc:${springVersion}',
+            struts2Core: 'org.apache.struts:struts2-core:2.3.15.1',
+            jasypt: 'org.jasypt:jasypt:1.5',
+            // apache common开源项目
+            commonsLang: 'commons-lang:commons-lang:2.5',
+            commonsCodec: 'commons-codec:commons-codec:1.4',
+            commonsCollections: 'commons-collections:commons-collections:3.2.1',
+            freemarker: 'org.freemarker:freemarker:2.3.15',
+            commonsDbcp: 'commons-dbcp:commons-dbcp:1.2.1',
+            cglib: 'cglib:cglib:2.2',
+            jsonLib: 'net.sf.json-lib:json-lib:2.3',
+
+            // springSecurity
+            springSecurityCore: 'org.springframework.security:spring-security-core:${springSecurityVersion}',
+            springSecurityWeb: 'org.springframework.security:spring-security-web:${springSecurityVersion}',
+            springSecurityConfig: 'org.springframework.security:spring-security-config:${springSecurityVersion}',
+            springSecurityAcl: 'org.springframework.security:spring-security-acl:${springSecurityVersion}',
+            springSecurityTaglibs: 'org.springframework.security:spring-security-taglibs:${springSecurityVersion}',
+
+            // 搜索引擎
+            compass: 'org.compass-project:compass:2.2.0',
+            luceneHighlighter: 'org.apache.lucene:lucene-highlighter:2.4.1',
+            // 导出Excel工具
+            poi: 'org.apache.poi:poi:3.8-beta4',
+            // 监控jdbc执行翻译
+            p6spy: 'p6spy:p6spy:1.3',
+            // 定时执行任务
+            quartz: 'org.quartz-scheduler:quartz:1.8.4',
+            // 验证码生成
+            jcaptchaAll: 'com.octo.captcha:jcaptcha-all:1.0-RC6',
+            // 获取计算机CPU等信息
+            sigar: 'org.fusesource:sigar:1.6.4',
+            // CXF提供的web service
+            cxfRtCore: 'org.apache.cxf:cxf-rt-core:${cxfVersion}',
+            cxfRtFrontendJaxws: 'org.apache.cxf:cxf-rt-frontend-jaxws:${cxfVersion}',
+            cxfRtTransportsHttp: 'org.apache.cxf:cxf-rt-transports-http:${cxfVersion}',
+            cxfRtWsSecurity: 'org.apache.cxf:cxf-rt-ws-security:${cxfVersion}',
+            // Eclipse智能报表系统
+            birt: 'org.eclipse.birt.runtime:org.eclipse.birt.runtime:4.2.2',
+            // BPM开源业务流程引擎
+            activitiEngine: 'org.activiti:activiti-engine:${activitiVersion}',
+            activitiSpring: 'org.activiti:activiti-spring:${activitiVersion}',
+            activitiExplorer: 'org.activiti:activiti-explorer:${activitiVersion}',
+            activitiModeler: 'org.activiti:activiti-modeler:${activitiVersion}',
+            //编译期间压缩js和css工具
+            wro4jCore: 'ro.isdc.wro4j:wro4j-core:1.7.0',
+            // 测试相关
+            springTest: 'org.springframework:spring-test:${springVersion}',
+            junit: 'junit:junit:4.11',
+            mockito: 'org.mockito:mockito-all:1.9.5',
+            // 数据库jdbc驱动
+            hsqldb: 'org.hsqldb:hsqldb:2.2.9',
+            h2db: 'com.h2database:h2:1.1.111',
+            postgresql: 'postgresql:postgresql:9.1-901-1.jdbc4',
+            mysql: 'mysql:mysql-connector-java:5.1.21'
+
+    ]
+}

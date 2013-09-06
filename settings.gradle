@@ -1,0 +1,5 @@
+rootProject.name = 'szo'
+include ':szo-core', ':szo-web'
+
+project(':szo-core').projectDir = "$rootDir/szo-core" as File
+project(':szo-web').projectDir = "$rootDir/szo-web" as File

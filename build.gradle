@@ -1,0 +1,43 @@
+apply plugin: 'idea'
+// libraries
+apply from: "lib.gradle"
+
+description = '''
+	SZO Team Software.
+'''
+
+version = '1.0.0'
+
+allprojects {
+    apply plugin: 'maven'
+
+    group = 'com.szo'
+    version = rootProject.version
+}
+
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.5
+    targetCompatibility = 1.5
+
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+
+        mavenRepo url: "http://172.16.5.30:8081/nexus/content/groups/public"
+        mavenRepo url: "http://repo1.maven.org/maven2"
+        mavenRepo url: "http://repository.jboss.org/nexus/content/groups/public-jboss/"
+        mavenRepo url: "http://download.java.net/maven/2/"
+        mavenRepo url: "http://files.couchbase.com/maven2/"
+        mavenRepo url: "http://raykrueger.googlecode.com/svn/repository"
+        mavenRepo url: "https://maven.alfresco.com/nexus/content/groups/public"
+        mavenRepo url: "http://maven.restlet.org"
+        mavenRepo url: "http://maven.thebuzzmedia.com"
+        mavenRepo url: "http://repo.maven.apache.org/maven2"
+        mavenRepo name: 'jboss-nexus', url: "http://repository.jboss.org/nexus/content/groups/public/"
+        mavenRepo name: "jboss-snapshots", url: "http://snapshots.jboss.org/maven2/"
+    }
+
+
+}

@@ -1,0 +1,13 @@
+description = 'SZO :: Web'
+
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+dependencies {
+    compile (
+            project(':szo-core'),
+            lib.mysql
+    )
+    testCompile lib.junit
+    providedCompile lib.javaee
+}
